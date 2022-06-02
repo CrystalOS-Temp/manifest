@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+	<remote name="los"
+		fetch="https://github.com/LineageOS/" />
+
+  <project path="hardware/xiaomi" name="android_hardware_xiaomi" remote="los" revision="lineage-19.0" />
+	
+</manifest>
