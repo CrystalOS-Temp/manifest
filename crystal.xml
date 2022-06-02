@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+	<remote name="cos"
+            fetch="https://github.com/CrystalOS-Temp/"
+            sync-j="8"
+            revision="A12.1" />
+
+    <project path="art" name="art" groups="pdk" remote="cos" />
+    <project path="bionic" name="bionic" groups="pdk" remote="cos" />
+    <project path="bootable/recovery" name="bootable_recovery" groups="pdk" remote="cos" />
+ 	<project path="build/make" name="android_build_make" groups="pdk" remote="cos" revision="A12" >
+    	<copyfile src="core/root.mk" dest="Makefile" />
+    	<linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+    	<linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+    	<linkfile src="core" dest="build/core" />
+    	<linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+    	<linkfile src="target" dest="build/target" />
+    	<linkfile src="tools" dest="build/tools" />
+  	</project>
+  	<project path="build/soong" name="build_soong" groups="pdk,tradefed" remote="cos" >
+    	<linkfile src="root.bp" dest="Android.bp" />
+    	<linkfile src="bootstrap.bash" dest="bootstrap.bash" />
+  	</project>
+
+    <project path="device/crystal/sepolicy" name="device_crystal" remote="cos" />
+    <project path="device/qcom/sepolicy_vndr" name="device_qcom" remote="cos" revision="A12-sepolicy_vndr" />
+    <project path="device/qcom/sepolicy-legacy-um" name="device_qcom" remote="cos" revision="A12-sepolicy-legacy-um" />
+
+    <project path="external/colorkt" name="external_colorkt" groups="pdk" remote="cos" />
+    <project path="external/hardened/malloc" name="external_hardened_malloc" remote="cos" />
+    <project path="external/themelib" name="external_themelib" groups="pdk" remote="cos" />
+
+    <project path="frameworks/av" name="frameworks_av" groups="pdk" remote="cos" />
+    <project path="frameworks/base" name="frameworks_base" groups="pdk-cw-fs,pdk-fs" remote="cos" />
+    <project path="frameworks/libs/net" name="frameworks_libs_net" groups="pdk-cw-fs,pdk-fs" remote="cos" />
+    <project path="frameworks/libs/systemui" name="frameworks_libs_systemui" groups="pdk-cw-fs,pdk-fs" remote="cos" />
+    <project path="frameworks/native" name="frameworks_native" groups="pdk" remote="cos" />
+    <project path="frameworks/opt/net/ims" name="frameworks_opt_net_ims" groups="frameworks_ims,pdk-cw-fs,pdk-fs" remote="cos" />
+    <project path="frameworks/opt/telephony" name="frameworks_opt_telephony" groups="pdk" remote="cos" />
+
+    <project path="hardware/qcom-caf/common" name="hardware_qcom-caf_common" remote="cos" >
+    <!-- add guard for AOSP hardware/qcom dir -->
+    <linkfile src="os_pickup_aosp.mk" dest="hardware/qcom/Android.mk" />
+    <!-- for AOSP sdm845 and sm8150, we override os_pickup.mk -->
+    <linkfile src="os_pickup.mk" dest="hardware/qcom/sdm845/Android.mk" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom/sm8150/Android.mk" />
+    <!-- add guards for CAF repositories -->
+    <!--linkfile src="os_pickup.mk" dest="hardware/qcom-caf/msm8916/Android.mk" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/msm8952/Android.mk" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/msm8960/Android.mk" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/msm8974/Android.mk" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/msm8994/Android.mk" />
+    <linkfile src="os_pickup.bp" dest="hardware/qcom-caf/msm8996/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/msm8996/Android.mk" /-->
+    <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/msm8996-R/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/msm8996-R/Android.mk" />
+    <linkfile src="os_pickup.bp" dest="hardware/qcom-caf/msm8998/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/msm8998/Android.mk" />
+    <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sdm660/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sdm660/Android.mk" />
+    <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sdm845/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sdm845/Android.mk" />
+    <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sm8150/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sm8150/Android.mk" />
+    <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sm8250/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sm8250/Android.mk" />
+    <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sm8350/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sm8350/Android.mk" />
+    <linkfile src="os_pickup.bp" dest="hardware/nxp/Android.bp" />
+    <linkfile src="os_pickup.bp" dest="vendor/nxp/opensource/pn5xx/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="vendor/nxp/opensource/pn5xx/Android.mk" />
+    <linkfile src="os_pickup.bp" dest="vendor/nxp/opensource/sn100x/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="vendor/nxp/opensource/sn100x/Android.mk" />
+    </project>
+    <project path="hardware/interfaces" name="hardware_interfaces" remote="cos" />
+    <project path="hardware/crystal/interfaces" name="hardware_crystal_interfaces" remote="cos" />
+    <project path="hardware/libhardware" name="hardware_libhardware" remote="cos" />
+    <project path="hardware/ril" name="hardware_ril" remote="cos" />
+    <project path="hardware/xiaomi" name="hardware_xiaomi" remote="cos" />
+
+    <project path="libcore" name="libcore" groups="pdk" remote="cos" />
+
+    <project path="packages/apps/Bluetooth" name="packages_apps_Bluetooth" groups="pdk-cw-fs,pdk-fs" remote="cos" />
+    <project path="packages/apps/Contacts" name="packages_apps_Contacts" groups="pdk-fs" remote="cos" />
+    <project path="packages/apps/Dialer" name="packages_apps_Dialer" groups="pdk-fs" remote="cos" />
+    <project path="packages/apps/DocumentsUI" name="packages_apps_DocumentsUI" groups="pdk-cw-fs,pdk-fs" remote="cos" />
+    <project path="packages/apps/GamingMode" name="packages_apps_GamingMode" groups="pdk-fs" remote="cos" />
+    <project path="packages/apps/Mine" name="packages_apps_Mine" groups="pdk-fs" remote="cos" />
+    <project path="packages/apps/Nfc" name="packages_apps_Nfc" groups="apps_nfc,pdk-fs" remote="cos" />
+    <project path="packages/apps/Settings" name="packages_apps_Settings" groups="pdk-fs" remote="cos" />
+    <project path="packages/apps/ThemePicker" name="packages_apps_ThemePicker" groups="pdk-fs" remote="cos" />
+    <project path="packages/modules/common" name="packages_modules_common" remote="cos" />
+    <project path="packages/modules/Connectivity" name="packages_modules_Connectivity" remote="cos" />
+    <project path="packages/modules/Permission" name="packages_modules_Permission" remote="cos" />
+    <project path="packages/modules/Wifi" name="packages_modules_Wifi" remote="cos" />
+    <project path="packages/providers/MediaProvider" name="packages_providers_MediaProvider" groups="pdk-cw-fs,pdk-fs" remote="cos" />
+    <project path="packages/providers/TelephonyProvider" name="packages_providers_TelephonyProvider" groups="pdk-cw-fs,pdk-fs" remote="cos" />
+    <project path="packages/resources/devicesettings" name="packages_resources_devicesettings" remote="cos" />
+    <project path="packages/services/Telecomm" name="packages_services_Telecomm" groups="pdk-cw-fs,pdk-fs" remote="cos" />
+
+    <project path="system/bt" name="system_bt" groups="pdk" remote="cos" />
+    <project path="system/core" name="android_system_core" remote="cos" revision="A12" />
+    <project path="system/netd" name="system_netd" remote="cos" />
+    <project path="system/sepolicy" name="system_sepolicy" remote="cos" />
+    <project path="system/tools/mkbootimg" name="system_tools_mkbootimg" groups="pdk" remote="cos" />
+    <project path="system/update_engine" name="system_update_engine" remote="cos" />
+    <project path="system/vold" name="system_vold" remote="cos" />
+
+    <project path="vendor/crystal" name="vendor_crystal" remote="cos" />
+    <project path="vendor/qcom/opensource/commonsys/display" name="vendor_qcom_opensource_commonsys_display" remote="cos" />
+
+</manifest>
