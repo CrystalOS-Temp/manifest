@@ -8,7 +8,7 @@ familiar with [Git and Repo](https://source.android.com/setup/build/downloading)
 To initialize your local repository, use command:
 
 ```bash
-repo init -u https://github.com/CrystalOS-Temp/manifest.git -b A12
+repo init -u https://github.com/CrystalOS-Temp/manifest.git -b A12.1
 ```
 
 Then sync up:
