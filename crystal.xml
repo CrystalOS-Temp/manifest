@@ -6,6 +6,11 @@
             sync-j="8"
             revision="A12.1" />
 
+    <remote name="cos-gitlab"
+            fetch="https://gitlab.com/crystalos-repos/"
+            sync-j="8"
+            revision="A12.1" />
+
     <project path="art" name="art" groups="pdk" remote="cos" />
     <project path="bionic" name="bionic" groups="pdk" remote="cos" />
     <project path="bootable/recovery" name="bootable_recovery" groups="pdk" remote="cos" />
@@ -108,6 +113,7 @@
     <project path="system/vold" name="system_vold" remote="cos" />
 
     <project path="vendor/crystal" name="vendor_crystal" remote="cos" />
+    <project path="vendor/gapps" name="vendor_gapps" remote="cos-gitlab" clone-depth="1" />
     <project path="vendor/qcom/opensource/commonsys/display" name="vendor_qcom_opensource_commonsys_display" remote="cos" />
 
 </manifest>
