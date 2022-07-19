@@ -31,6 +31,7 @@
     <project path="device/crystal/sepolicy" name="device_crystal" remote="cos" />
     <project path="device/qcom/sepolicy_vndr" name="device_qcom" remote="cos" revision="A12-sepolicy_vndr" />
     <project path="device/qcom/sepolicy-legacy-um" name="device_qcom" remote="cos" revision="A12-sepolicy-legacy-um" />
+    <project path="device/qcom/qssi" name="device_qcom_qssi" remote="cos" />
 
     <project path="external/colorkt" name="external_colorkt" groups="pdk" remote="cos" />
     <project path="external/hardened/malloc" name="external_hardened_malloc" remote="cos" />
