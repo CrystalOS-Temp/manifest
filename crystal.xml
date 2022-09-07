@@ -115,5 +115,6 @@
     <project path="vendor/crystal" name="vendor_crystal" remote="cos" />
     <project path="vendor/gapps" name="vendor_gapps" remote="cos-gitlab" clone-depth="1" />
     <project path="vendor/qcom/opensource/commonsys/display" name="vendor_qcom_opensource_commonsys_display" remote="cos" />
+    <project path="vendor/qcom/opensource/commonsys/system/bt" name="vendor_qcom_opensource_commonsys_system_bt" remote="cos" />
 
 </manifest>
