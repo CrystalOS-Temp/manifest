@@ -14,7 +14,7 @@
     <project path="art" name="art" groups="pdk" remote="cos" />
     <project path="bionic" name="bionic" groups="pdk" remote="cos" />
     <project path="bootable/recovery" name="bootable_recovery" groups="pdk" remote="cos" />
- 	  <project path="build/make" name="android_build_make" groups="pdk" remote="cos" revision="A12" >
+ 	  <project path="build/make" name="android_build_make" groups="pdk" remote="cos" >
     	<copyfile src="core/root.mk" dest="Makefile" />
     	<linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
     	<linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
@@ -29,8 +29,8 @@
   	</project>
 
     <project path="device/crystal/sepolicy" name="device_crystal" remote="cos" />
-    <project path="device/qcom/sepolicy_vndr" name="device_qcom" remote="cos" revision="A12-sepolicy_vndr" />
-    <project path="device/qcom/sepolicy-legacy-um" name="device_qcom" remote="cos" revision="A12-sepolicy-legacy-um" />
+    <project path="device/qcom/sepolicy_vndr" name="device_qcom" remote="cos" revision="A12.1-sepolicy_vndr" />
+    <project path="device/qcom/sepolicy-legacy-um" name="device_qcom" remote="cos" revision="A12.1-sepolicy-legacy-um" />
     <project path="device/qcom/qssi" name="device_qcom_qssi" remote="cos" />
 
     <project path="external/colorkt" name="external_colorkt" groups="pdk" remote="cos" />
@@ -105,7 +105,7 @@
     <project path="packages/services/Telecomm" name="packages_services_Telecomm" groups="pdk-cw-fs,pdk-fs" remote="cos" />
 
     <project path="system/bt" name="system_bt" groups="pdk" remote="cos" />
-    <project path="system/core" name="android_system_core" remote="cos" revision="A12" />
+    <project path="system/core" name="android_system_core" remote="cos" />
     <project path="system/netd" name="system_netd" remote="cos" />
     <project path="system/sepolicy" name="system_sepolicy" remote="cos" />
     <project path="system/tools/mkbootimg" name="system_tools_mkbootimg" groups="pdk" remote="cos" />
